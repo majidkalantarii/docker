@@ -61,3 +61,39 @@ Exa : docker container ls -ls
 * docker stop (name)
 * docker ps -a
 * docker rm (name)
+
+## inspect
+* docker container inspect (name)
+* dokcer container inspect -f'{{.NetworkSetting.Netwoks.bridge.IPAdress}}' (name)
+* docker container ls -aq
+* docker container inspct -f'{{.NetworkSetting.Netwoks.bridge.IPAdress}}'$(docker container ls -aq)
+* docker container inspct -f'{{.Name}} --> {{.NetworkSetting.Netwoks.bridge.IPAdress}}'$(docker container ls -aq)
+
+
+##Mysql
+* docker container logs
+* docker container exec --intractive --tty (-it) (Conyainer Name) /bin/bash
+* mysql -u root -p (Password)
+* yum install tmux
+(ctrl+e+")(cntrl+e+up)
+* docker container exec (Name) mysql -u root -p (PASS) -e (QUERY)
+
+##Ubuntu On Docker
+* docker container run --name ubuntu1 ubuntu
+* docker container run --exec -it --rm --name ubuntu2 ubuntu /bin/bash
+*#apt update
+*apt-get install wget
+*exit
+
+##Copy file from OS to Container
+* docker container cp (fileName) (Container Name:/root/fileName)
+* docker container pause (Container Name)
+* docker container unpause (Container Name)
+* docker container top (Container Name)
+* docker container update --restart=on-failure:3 (Container Name)
+* docker container restart (Container Name)
+* docker container kill (Container Name)
+
+## Wordpress
+* docker container run --name (Name) -p 8080:80 -d wordpress:latest
+
